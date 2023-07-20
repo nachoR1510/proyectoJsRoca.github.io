@@ -1,8 +1,8 @@
 function crearTienda(productos) {
   for (let producto of productos) {
     let productoMostrar = document.createElement("div");
-    productoMostrar.innerHTML = `<img src="./img/${producto.nombre}.webp" alt="${producto.nombre}Img">
-    <h2> ${producto.nombre} </h2>
+    productoMostrar.innerHTML = `<img src="./img/${producto.articulo}_${producto.marca}.webp" alt="${producto.articulo}${producto.id}Img">
+    <h2> ${producto.nombre}</h2>
      <p>$${producto.precio}</p>
      <p>stock:${producto.unidades}</p>
      <button id=btnProducto${producto.id} class=btnStyle>Añadir al carrito</button>`;
@@ -36,11 +36,13 @@ function calcularDescuento(codigo) {
 }
 
 class producto {
-  constructor(nombre, precio, unidades, id) {
+  constructor(nombre, articulo, precio, unidades, id, marca) {
     this.nombre = nombre;
+    this.articulo = articulo;
     this.precio = precio;
     this.unidades = unidades;
     this.id = id;
+    this.marca = marca;
   }
 }
 
@@ -58,34 +60,36 @@ let productoBuscarId;
 let busqueda;
 let codigoDescuento;
 
-productos.push(new producto("aceite", 500, 15, 1));
-productos.push(new producto("harina", 300, 20, 2));
-productos.push(new producto("pure de tomate", 150, 7, 3));
-productos.push(new producto("sal fina", 200, 30, 4));
+productos.push(new producto("aceite pureza", "aceite", 500, 15, 1, "pureza"));
+productos.push(new producto("harina pureza", "harina", 300, 20, 2, "pureza"));
+productos.push(
+  new producto("pure de tomate arcor", "pTomate", 150, 7, 3, "arcor")
+);
+productos.push(
+  new producto("sal fina celusal", "salFina", 200, 30, 4, "celusal")
+);
+productos.push(
+  new producto("harina cañuelas", "harina", 350, 15, 5, "cañuelas")
+);
 
 crearTienda(productos);
 
 let productoBuscar = document.getElementById("buscar");
 productoBuscar.oninput = () => {
-  busqueda = productos.find(
-    (producto) => producto.nombre === productoBuscar.value
+  busqueda = productos.filter((producto) =>
+    producto.nombre.includes(productoBuscar.value)
   );
-  console.log(busqueda?.nombre || "producto no encontrado");
-  let valor = busqueda?.nombre || "producto no encontrado";
-  if (valor === productoBuscar.value) {
-    limpiarTienda();
-    let mostrarBusqueda = document.createElement("div");
-    mostrarBusqueda.innerHTML = `<img src="./img/${busqueda.nombre}.webp" alt="${busqueda.nombre}Img">
-   <h2> ${busqueda.nombre} </h2>
-   <p>$${busqueda.precio}</p>
-   <p>stock:${busqueda.unidades}</p>
-   <button id=btnProducto${busqueda.id} class=btnStyle>Añadir al carrito</button>`;
-    document.getElementById("productos").appendChild(mostrarBusqueda);
 
-    mostrarBusqueda.setAttribute("id", "producto");
-  } else if (valor === "producto no encontrado") {
+  limpiarTienda();
+  crearTienda(busqueda);
+
+  if (busqueda.length === 0) {
     limpiarTienda();
-    crearTienda(productos);
+
+    let sinResultados = document.createElement("div");
+    sinResultados.innerHTML = `<h2> sin concidencias :( </h2>`;
+    document.getElementById("productos").appendChild(sinResultados);
+    sinResultados.setAttribute("id", "producto");
   }
 };
 
