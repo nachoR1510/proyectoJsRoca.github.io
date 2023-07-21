@@ -4,9 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>preEntrega2Roca | Carrito</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <script src="./js/main.js"></script>
+    <header class="header">
+      <div class="header__nombre">
+        <h1>PreEntregaRoca</h1>
+      </div>
+
+      <div class="header__flecha">
+        <a href="../index.html"
+          ><img src="../img/arrow-left.svg" alt="flechaVolver"
+        /></a>
+      </div>
+    </header>
+
+    <section class="fichaCompra">
+      <div class="fichaCompra__datos">
+        <input
+          type="text"
+          placeholder="Ingrese su nombre"
+          class="textoNombre"
+        />
+        <input
+          type="text"
+          placeholder="Ingrese su provincia"
+          class="textoProvincia"
+        />
+        <input
+          type="text"
+          placeholder="Ingrese un codigo de descuento"
+          class="textoCodigo"
+        />
+      </div>
+
+      <div class="fichaCompra__factura">
+        <h2>todavia no tiene ningun producto</h2>
+      </div>
+    </section>
+
+    <script src="../js/main.js"></script>
   </body>
 </html>

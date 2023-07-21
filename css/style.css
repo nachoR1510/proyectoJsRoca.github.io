@@ -56,6 +56,22 @@
     height: 32px;
 }
 
+.header__flecha {
+
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.header__flecha img {
+
+    height: 32px;
+    width: 32px;
+
+}
+
 .tienda {
 
     display: flex;
@@ -110,4 +126,38 @@
     width: 60%;
     height: 10%;
     font-size: 15px;
+}
+
+.fichaCompra{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.fichaCompra__datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.fichaCompra__datos input {
+
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.fichaCompra__factura{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#ocultar{
+    display: none;
 }

@@ -9,6 +9,21 @@ function crearTienda(productos) {
     document.getElementById("productos").appendChild(productoMostrar);
 
     productoMostrar.setAttribute("id", "producto");
+    let btn = document.getElementById(`btnProducto${producto.id}`);
+    btn.onclick = () => {
+      carrito.push(producto.nombre, producto.precio);
+      console.log(carrito);
+      let carritoJson = JSON.stringify(carrito);
+      localStorage.setItem("carrito", carritoJson);
+      if (carrito.length > 0) {
+        document.getElementById("cantidad").innerText = carrito.length / 2;
+        carritoLlenoIcon.removeAttribute("id", "ocultar");
+        carritoVacioIcon.setAttribute("id", "ocultar");
+      } else {
+        carritoVacioIcon.removeAttribute("id", "ocultar");
+        carritoLlenoIcon.setAttribute("id", "ocultar");
+      }
+    };
   }
 }
 
@@ -59,6 +74,9 @@ let productoBuscarNombre;
 let productoBuscarId;
 let busqueda;
 let codigoDescuento;
+let carrito = JSON.parse(localStorage.getItem("carrito")) ?? [];
+let carritoVacioIcon = document.querySelector(".carritoVacio");
+let carritoLlenoIcon = document.querySelector(".carritoLleno");
 
 productos.push(new producto("aceite pureza", "aceite", 500, 15, 1, "pureza"));
 productos.push(new producto("harina pureza", "harina", 300, 20, 2, "pureza"));
@@ -92,6 +110,15 @@ productoBuscar.oninput = () => {
     sinResultados.setAttribute("id", "producto");
   }
 };
+
+if (carrito.length > 0) {
+  document.getElementById("cantidad").innerText = carrito.length / 2;
+  carritoLlenoIcon.removeAttribute("id", "ocultar");
+  carritoVacioIcon.setAttribute("id", "ocultar");
+} else {
+  carritoVacioIcon.removeAttribute("id", "ocultar");
+  carritoLlenoIcon.setAttribute("id", "ocultar");
+}
 
 if (ubicacion == "buenos aires" || ubicacion == "Buenos aires") {
   envio = 0;
