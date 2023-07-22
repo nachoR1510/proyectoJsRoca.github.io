@@ -23,26 +23,20 @@
       <div class="fichaCompra__datos">
         <input
           type="text"
-          placeholder="Ingrese su nombre"
-          class="textoNombre"
-        />
-        <input
-          type="text"
-          placeholder="Ingrese su provincia"
-          class="textoProvincia"
-        />
-        <input
-          type="text"
           placeholder="Ingrese un codigo de descuento"
-          class="textoCodigo"
+          class="texto"
+          id="textoCodigo"
         />
+
+        <input type="button" id="btnCodigo" value="validar codigo" />
       </div>
 
       <div class="fichaCompra__factura">
-        <h2>todavia no tiene ningun producto</h2>
+        <h2 id="h2">todavia no tiene ningun producto</h2>
+        <ul id="listaProductos"></ul>
       </div>
     </section>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
   </body>
 </html>

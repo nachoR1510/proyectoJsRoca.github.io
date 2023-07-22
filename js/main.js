@@ -35,21 +35,6 @@ function limpiarTienda() {
   }
 }
 
-function calcularDescuento(codigo) {
-  if (codigo == "coderhouse") {
-    alert("codigo de descuento aplicado.");
-    descuento = (30 * subtotal) / 100;
-    return descuento;
-  } else if (codigo == "js") {
-    alert("codigo de descuento aplicado.");
-    descuento = (15 * subtotal) / 100;
-    return descuento;
-  } else {
-    alert("el codigo ingresado no es valido, no se aplicara ningun descuento");
-    return descuento;
-  }
-}
-
 class producto {
   constructor(nombre, articulo, precio, unidades, id, marca) {
     this.nombre = nombre;
@@ -61,19 +46,8 @@ class producto {
   }
 }
 
-let subtotal = 0;
-let descuento = 0;
-let envio = 0;
-let total = 0;
-let fecha = new Date();
 let productos = [];
-let Npedido = Math.round(Math.random() * 99999 + 10000);
-let nombre;
-let ubicacion;
-let productoBuscarNombre;
-let productoBuscarId;
 let busqueda;
-let codigoDescuento;
 let carrito = JSON.parse(localStorage.getItem("carrito")) ?? [];
 let carritoVacioIcon = document.querySelector(".carritoVacio");
 let carritoLlenoIcon = document.querySelector(".carritoLleno");
@@ -119,11 +93,3 @@ if (carrito.length > 0) {
   carritoVacioIcon.removeAttribute("id", "ocultar");
   carritoLlenoIcon.setAttribute("id", "ocultar");
 }
-
-if (ubicacion == "buenos aires" || ubicacion == "Buenos aires") {
-  envio = 0;
-} else {
-  envio = 700;
-}
-
-total = subtotal - descuento + envio;
