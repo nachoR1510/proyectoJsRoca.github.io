@@ -56,16 +56,17 @@
     height: 32px;
 }
 
-.header__flecha {
+.header__volver {
 
     grid-column: 3/4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 5%;
+    gap: 10px;
 }
 
-.header__flecha img {
+.header__volver img {
 
     height: 32px;
     width: 32px;

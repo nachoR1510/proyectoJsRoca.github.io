@@ -49,4 +49,10 @@ if (carrito.length !== 0) {
   <p>Envio: ${envio}</p>
   <p>Total: ${total}</p>`;
   document.querySelector(".fichaCompra__factura").appendChild(cuenta);
+
+  document.getElementById("limpiarCarrito").onclick = () => {
+    carrito.splice(0, carrito.length);
+    localStorage.clear();
+    console.log("hola");
+  };
 }
