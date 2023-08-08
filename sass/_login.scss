@@ -1,0 +1,70 @@
+.mainLogin {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-content: center;
+  justify-content: center;
+  &__formulario {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #272829;
+    color: #ffffff;
+    border-radius: 20px;
+    height: 400px;
+    gap: 5px;
+    text-align: center;
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+    input {
+      height: 30px;
+      width: 300px;
+      border-radius: 5px;
+    }
+  }
+  &__btn {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #272829;
+  color: #ffffff;
+  gap: 10px;
+  border-radius: 20px;
+  height: 500px;
+  margin-left: 35%;
+  margin-right: 35%;
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: 1%;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+  input {
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+  }
+  a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

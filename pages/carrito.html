@@ -3,26 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>preEntrega2Roca | Carrito</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>proyectoFinalRoca | Carrito</title>
+    <link rel="stylesheet" href="../sass/main.css" />
+    <link
+      href="  
+     https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body id="fondo">
     <header class="header">
       <div class="header__nombre">
-        <h1>PreEntregaRoca</h1>
+        <h1>Proyecyo Final Roca</h1>
       </div>
 
       <div class="header__volver">
         <a href="../index.html"
-          ><img src="../img/cart-plus.svg" alt="carritoVolver"
-        /></a>
-
-        <a href="./carrito.html">
-          <img
-            src="../img/cart-x.svg"
-            alt="limpiarCarrito"
-            id="limpiarCarrito"
-          />
+          ><img src="../img/shop.svg" alt="carritoVolver" />
+          Volver a la tienda
         </a>
       </div>
     </header>
@@ -37,6 +35,12 @@
         />
 
         <input type="button" id="btnCodigo" value="validar codigo" />
+
+        <div id="ocultar">
+          <h2>codigo validado</h2>
+
+          <img src="../img/patch-check.svg" alt="check" />
+        </div>
       </div>
 
       <div class="fichaCompra__factura">
@@ -45,6 +49,7 @@
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/carrito.js"></script>
   </body>
 </html>

@@ -3,46 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>preEntrega3Roca</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>proyectoFinalRoca | Tienda</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./sass/main.css" />
   </head>
 
-  <body>
+  <body id="fondo">
     <header class="header">
       <div class="header__nombre">
-        <h1>PreEntregaRoca</h1>
+        <h1>Proyecto final Roca</h1>
       </div>
 
       <div class="header__barraBus">
         <input
           type="text"
-          placeholder="Buscar producto"
+          placeholder=" Buscar producto"
           class="barraBus"
           id="buscar"
         />
       </div>
 
-      <div class="header__carrito carritoVacio">
-        <a href="./pages/carrito.html">
-          <img src="./img/cart4.svg" alt="carritoV" class="carritoImg"
-        /></a>
-      </div>
+      <div class="header__carrito">
+        <div class="carritoVacio">
+          <a href="./pages/carrito.html">
+            <img src="./img/cart4.svg" alt="carritoV" class="carritoImg"
+          /></a>
+        </div>
 
-      <div class="header__carrito carritoLleno">
-        <a href="./pages/carrito.html">
-          <img
-            src="./img/cart-check-fill.svg"
-            alt="carritoL"
-            class="carritoImg"
-        /></a>
-        <p id="cantidad">1</p>
+        <div class="carritoLleno">
+          <a href="./pages/carrito.html">
+            <img
+              src="./img/cart-check-fill.svg"
+              alt="carritoL"
+              class="carritoImg"
+          /></a>
+          <p id="cantidad">1</p>
+        </div>
       </div>
     </header>
 
     <main class="tienda" id="productos"></main>
 
-    <img src="./img/" alt="" />
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
